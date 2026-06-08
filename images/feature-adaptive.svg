@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fe4e19"/>
+      <stop offset="100%" stop-color="#d43a0f"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="55" fill="#fe4e19" opacity="0.06"/>
+  <circle cx="60" cy="60" r="45" fill="#fe4e19" opacity="0.04"/>
+  <!-- Circular arrows for adaptivity -->
+  <path d="M60 35A25 25 0 1 1 40 42" stroke="#fe4e19" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <path d="M35 60A25 25 0 1 1 60 85" stroke="#da007e" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.4"/>
+  <path d="M85 60A25 25 0 1 1 60 35" stroke="#0083ba" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.3"/>
+  <polygon points="40,42 35,35 47,38" fill="#fe4e19" opacity="0.7"/>
+  <polygon points="60,85 55,78 65,78" fill="#da007e" opacity="0.5"/>
+  <circle cx="60" cy="60" r="8" fill="#fe4e19" opacity="0.12"/>
+  <circle cx="60" cy="60" r="4" fill="#fe4e19" opacity="0.25"/>
+</svg>

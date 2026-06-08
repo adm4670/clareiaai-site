@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <circle cx="100" cy="100" r="90" fill="#fe4e19" opacity="0.04"/>
+  <circle cx="100" cy="100" r="6" fill="#fe4e19" opacity="0.15"/>
+  <!-- Arrow trending up -->
+  <path d="M50 140 L75 120 L100 120 L125 95 L150 75" stroke="#fe4e19" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <polygon points="150,75 142,72 145,80" fill="#fe4e19"/>
+  <!-- Bar chart small -->
+  <rect x="60" y="110" width="12" height="30" rx="2" fill="#0083ba" opacity="0.15"/>
+  <rect x="78" y="95" width="12" height="45" rx="2" fill="#da007e" opacity="0.15"/>
+  <rect x="96" y="105" width="12" height="35" rx="2" fill="#fe4e19" opacity="0.15"/>
+  <rect x="114" y="80" width="12" height="60" rx="2" fill="#0083ba" opacity="0.15"/>
+  <!-- Star -->
+  <polygon points="155,65 157,71 163,71 158,75 160,81 155,77 150,81 152,75 147,71 153,71" fill="#da007e" opacity="0.3"/>
+</svg>
