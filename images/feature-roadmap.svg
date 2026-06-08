@@ -1,18 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
-  <defs>
-    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0083ba"/>
-      <stop offset="100%" stop-color="#004f90"/>
-    </linearGradient>
-  </defs>
-  <circle cx="60" cy="60" r="55" fill="#0083ba" opacity="0.06"/>
-  <circle cx="60" cy="60" r="45" fill="#0083ba" opacity="0.04"/>
-  <path d="M35 80L50 65L60 75L85 45" stroke="#0083ba" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="85" cy="45" r="5" fill="#0083ba"/>
-  <circle cx="35" cy="80" r="4" fill="#da007e" opacity="0.5"/>
-  <circle cx="50" cy="65" r="4" fill="#fe4e19" opacity="0.5"/>
-  <circle cx="60" cy="75" r="4" fill="#0083ba" opacity="0.5"/>
-  <path d="M30 85L35 80" stroke="#da007e" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-  <path d="M46 70L50 65" stroke="#fe4e19" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-  <path d="M56 80L60 75" stroke="#0083ba" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <circle cx="50" cy="50" r="48" fill="none" stroke="#00b5d8" stroke-width="2" opacity="0.15"/>
+  <circle cx="50" cy="50" r="38" fill="none" stroke="#00b5d8" stroke-width="1.5" opacity="0.3"/>
+  <polyline points="25,65 40,45 55,55 75,30" fill="none" stroke="#ef0070" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="25" cy="65" r="4" fill="#004891"/>
+  <circle cx="40" cy="45" r="4" fill="#ef0070"/>
+  <circle cx="55" cy="55" r="4" fill="#00b5d8"/>
+  <circle cx="75" cy="30" r="4" fill="#ef0070"/>
+  <text x="50" y="85" text-anchor="middle" fill="#004891" font-size="8" font-family="sans-serif" font-weight="bold">Roadmap</text>
 </svg>
