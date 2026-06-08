@@ -1,27 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 180" width="200" height="180">
   <defs>
-    <linearGradient id="mg3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ef0070;stop-opacity:0.08"/>
-      <stop offset="100%" style="stop-color:#00b5d8;stop-opacity:0.08"/>
+    <linearGradient id="se1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f0fa"/>
+      <stop offset="100%" style="stop-color:#f0faf5"/>
     </linearGradient>
   </defs>
-  <rect width="200" height="180" rx="16" fill="url(#mg3)"/>
-  <!-- Upward arrow/growth chart -->
-  <rect x="30" y="100" width="20" height="40" rx="2" fill="#004891" opacity="0.3"/>
-  <rect x="60" y="75" width="20" height="65" rx="2" fill="#ef0070" opacity="0.4"/>
-  <rect x="90" y="55" width="20" height="85" rx="2" fill="#00b5d8" opacity="0.4"/>
-  <rect x="120" y="35" width="20" height="105" rx="2" fill="#ef0070" opacity="0.5"/>
-  <rect x="150" y="25" width="20" height="115" rx="2" fill="#004891" opacity="0.4"/>
+  <rect width="200" height="180" rx="16" fill="url(#se1)"/>
+  <polygon points="0,0 80,0 0,80" fill="rgba(0,181,216,0.04)"/>
+  <polygon points="200,180 120,180 200,100" fill="rgba(0,72,145,0.04)"/>
+  <!-- Growth chart as origami -->
+  <polygon points="35,105 50,105 50,125 35,125" fill="rgba(0,72,145,0.1)" stroke="#004891" stroke-width="1" stroke-linejoin="round"/>
+  <polygon points="35,105 50,90 50,105" fill="rgba(0,72,145,0.06)" stroke="#004891" stroke-width="0.6" stroke-linejoin="round"/>
+  <polygon points="65,105 80,105 80,125 65,125" fill="rgba(239,0,112,0.1)" stroke="#ef0070" stroke-width="1" stroke-linejoin="round"/>
+  <polygon points="65,105 80,75 80,105" fill="rgba(239,0,112,0.06)" stroke="#ef0070" stroke-width="0.6" stroke-linejoin="round"/>
+  <polygon points="95,105 110,105 110,125 95,125" fill="rgba(0,181,216,0.1)" stroke="#00b5d8" stroke-width="1" stroke-linejoin="round"/>
+  <polygon points="95,105 110,65 110,105" fill="rgba(0,181,216,0.06)" stroke="#00b5d8" stroke-width="0.6" stroke-linejoin="round"/>
+  <polygon points="125,105 140,105 140,125 125,125" fill="rgba(239,0,112,0.1)" stroke="#ef0070" stroke-width="1" stroke-linejoin="round"/>
+  <polygon points="125,105 140,45 140,105" fill="rgba(239,0,112,0.06)" stroke="#ef0070" stroke-width="0.6" stroke-linejoin="round"/>
+  <polygon points="155,105 170,105 170,125 155,125" fill="rgba(0,72,145,0.1)" stroke="#004891" stroke-width="1" stroke-linejoin="round"/>
+  <polygon points="155,105 170,55 170,105" fill="rgba(0,72,145,0.06)" stroke="#004891" stroke-width="0.6" stroke-linejoin="round"/>
   <!-- Growth line -->
-  <polyline points="40,100 70,75 100,55 130,35 160,25" fill="none" stroke="#ef0070" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="42,95 72,80 102,70 132,50 162,58" fill="none" stroke="#ef0070" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   <!-- Star -->
-  <polygon points="160,25 163,33 172,33 165,38 168,46 160,41 152,46 155,38 148,33 157,33" fill="#ef0070"/>
-  <!-- Trophy -->
-  <g transform="translate(60, 135)">
-    <path d="M-8,-5 Q-8,-12 0,-12 Q8,-12 8,-5" fill="none" stroke="#004891" stroke-width="1.5"/>
-    <rect x="-6" y="-4" width="12" height="8" rx="1" fill="none" stroke="#004891" stroke-width="1.5"/>
-    <rect x="-3" y="4" width="6" height="4" fill="#004891" opacity="0.5"/>
+  <polygon points="162,58 165,50 168,58 175,58 170,63 172,71 165,67 158,71 160,63 155,58" fill="#ef0070" opacity="0.5"/>
+  <!-- Trophy base -->
+  <g transform="translate(50, 140)" opacity="0.25">
+    <path d="M-6,-4 Q-8,2 0,2 Q8,2 6,-4" fill="none" stroke="#004891" stroke-width="1.2"/>
+    <rect x="-4" y="2" width="8" height="6" rx="1" fill="none" stroke="#004891" stroke-width="1"/>
   </g>
   <text x="100" y="135" text-anchor="middle" fill="#004891" font-size="13" font-family="sans-serif" font-weight="bold">Evolução</text>
-  <text x="100" y="152" text-anchor="middle" fill="#666" font-size="11" font-family="sans-serif">Acompanhamento contínuo</text>
+  <text x="100" y="152" text-anchor="middle" fill="#888" font-size="11" font-family="sans-serif">Acompanhamento contínuo</text>
 </svg>

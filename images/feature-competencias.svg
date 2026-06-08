@@ -1,9 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <circle cx="50" cy="50" r="48" fill="none" stroke="#ef0070" stroke-width="2" opacity="0.15"/>
-  <circle cx="50" cy="50" r="38" fill="none" stroke="#ef0070" stroke-width="1.5" opacity="0.3"/>
-  <polygon points="50,28 70,70 30,70" fill="none" stroke="#004891" stroke-width="2" stroke-linejoin="round"/>
-  <polygon points="50,38 63,65 37,65" fill="none" stroke="#ef0070" stroke-width="1.5" opacity="0.5"/>
-  <circle cx="50" cy="55" r="5" fill="#00b5d8"/>
-  <text x="50" y="85" text-anchor="middle" fill="#004891" font-size="7" font-family="sans-serif" font-weight="bold">Análise de</text>
-  <text x="50" y="92" text-anchor="middle" fill="#004891" font-size="7" font-family="sans-serif" font-weight="bold">Competências</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="c1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00b5d8;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#ef0070;stop-opacity:0.04"/>
+    </linearGradient>
+  </defs>
+  <!-- Origami pyramid / competence layers -->
+  <polygon points="60,15 105,95 15,95" fill="url(#c1)" stroke="#004891" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- Fold layers -->
+  <polygon points="60,15 82,55 38,55" fill="#ef0070" opacity="0.06" stroke="#ef0070" stroke-width="0.8" stroke-linejoin="round"/>
+  <polygon points="60,35 77,75 43,75" fill="#004891" opacity="0.06" stroke="#004891" stroke-width="0.8" stroke-linejoin="round"/>
+  <polygon points="60,55 72,95 48,95" fill="#00b5d8" opacity="0.06" stroke="#00b5d8" stroke-width="0.8" stroke-linejoin="round"/>
+  <!-- Center point -->
+  <circle cx="60" cy="55" r="4" fill="#ef0070" opacity="0.4"/>
+  <!-- Vertical fold line -->
+  <line x1="60" y1="15" x2="60" y2="95" stroke="#004891" stroke-width="0.5" opacity="0.2"/>
+  <text x="60" y="118" text-anchor="middle" fill="#004891" font-size="9" font-family="sans-serif" font-weight="bold">Análise de</text>
+  <text x="60" y="128" text-anchor="middle" fill="#004891" font-size="9" font-family="sans-serif" font-weight="bold">Competências</text>
 </svg>

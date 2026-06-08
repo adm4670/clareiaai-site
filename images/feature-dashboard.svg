@@ -1,9 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <circle cx="50" cy="50" r="48" fill="none" stroke="#ef0070" stroke-width="2" opacity="0.15"/>
-  <circle cx="50" cy="50" r="38" fill="none" stroke="#ef0070" stroke-width="1.5" opacity="0.3"/>
-  <rect x="25" y="30" width="50" height="35" rx="4" fill="none" stroke="#004891" stroke-width="2"/>
-  <rect x="30" y="35" width="18" height="25" rx="2" fill="#ef0070" opacity="0.7"/>
-  <rect x="52" y="40" width="18" height="20" rx="2" fill="#00b5d8" opacity="0.7"/>
-  <line x1="25" y1="48" x2="75" y2="48" stroke="white" stroke-width="1.5" opacity="0.3"/>
-  <text x="50" y="85" text-anchor="middle" fill="#004891" font-size="8" font-family="sans-serif" font-weight="bold">Dashboard</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="db1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00b5d8;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#00b5d8;stop-opacity:0.03"/>
+    </linearGradient>
+  </defs>
+  <!-- Origami chart -->
+  <polygon points="20,85 40,85 40,105 20,105" fill="#ef0070" opacity="0.12" stroke="#ef0070" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="20,85 40,65 40,85" fill="#ef0070" opacity="0.08" stroke="#ef0070" stroke-width="0.8" stroke-linejoin="round"/>
+  <polygon points="45,85 65,85 65,105 45,105" fill="#004891" opacity="0.12" stroke="#004891" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="45,85 65,55 65,85" fill="#004891" opacity="0.08" stroke="#004891" stroke-width="0.8" stroke-linejoin="round"/>
+  <polygon points="70,85 90,85 90,105 70,105" fill="#00b5d8" opacity="0.12" stroke="#00b5d8" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="70,85 90,40 90,85" fill="#00b5d8" opacity="0.08" stroke="#00b5d8" stroke-width="0.8" stroke-linejoin="round"/>
+  <polygon points="95,85 115,85 115,105 95,105" fill="#ef0070" opacity="0.1" stroke="#ef0070" stroke-width="1.2" stroke-linejoin="round"/>
+  <polygon points="95,85 115,50 115,85" fill="#ef0070" opacity="0.06" stroke="#ef0070" stroke-width="0.8" stroke-linejoin="round"/>
+  <!-- Growth line -->
+  <polyline points="30,85 55,60 80,45 105,50" fill="none" stroke="#ef0070" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="60" y="118" text-anchor="middle" fill="#004891" font-size="11" font-family="sans-serif" font-weight="bold">Dashboard</text>
 </svg>

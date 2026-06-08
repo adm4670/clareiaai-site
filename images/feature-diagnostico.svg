@@ -1,8 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <circle cx="50" cy="50" r="48" fill="none" stroke="#ef0070" stroke-width="2" opacity="0.15"/>
-  <circle cx="50" cy="50" r="38" fill="none" stroke="#ef0070" stroke-width="1.5" opacity="0.3"/>
-  <circle cx="50" cy="50" r="28" fill="none" stroke="#004891" stroke-width="2"/>
-  <path d="M50 28 L50 50 L65 65" fill="none" stroke="#ef0070" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="50" cy="50" r="5" fill="#00b5d8"/>
-  <text x="50" y="85" text-anchor="middle" fill="#004891" font-size="9" font-family="sans-serif" font-weight="bold">Diagnóstico</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="d1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef0070;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#ef0070;stop-opacity:0.04"/>
+    </linearGradient>
+  </defs>
+  <!-- Origami paper fold - clipboard shape -->
+  <polygon points="35,15 85,15 95,25 95,105 35,105 25,95 25,25" fill="url(#d1)" stroke="#ef0070" stroke-width="1.5" stroke-linejoin="round"/>
+  <polygon points="85,15 95,25 85,25" fill="#ef0070" opacity="0.15" stroke="#ef0070" stroke-width="1" stroke-linejoin="round"/>
+  <!-- Fold line -->
+  <line x1="60" y1="15" x2="60" y2="105" stroke="#ef0070" stroke-width="0.6" opacity="0.3"/>
+  <!-- Content lines as origami folds -->
+  <polygon points="40,40 60,30 80,40 60,50" fill="#ef0070" opacity="0.1" stroke="#ef0070" stroke-width="1" stroke-linejoin="round"/>
+  <polygon points="40,55 60,45 80,55 60,65" fill="#004891" opacity="0.08" stroke="#004891" stroke-width="0.8" stroke-linejoin="round"/>
+  <polygon points="40,70 60,60 80,70 60,80" fill="#00b5d8" opacity="0.08" stroke="#00b5d8" stroke-width="0.8" stroke-linejoin="round"/>
+  <!-- Check mark as origami -->
+  <polygon points="50,85 62,75 75,90 62,80" fill="#ef0070" opacity="0.2" stroke="#ef0070" stroke-width="1.2" stroke-linejoin="round"/>
+  <text x="60" y="118" text-anchor="middle" fill="#004891" font-size="11" font-family="sans-serif" font-weight="bold">Diagnóstico</text>
 </svg>

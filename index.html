@@ -7,34 +7,23 @@
   <meta name="description" content="Clareia.ai usa inteligência artificial para criar roadmaps personalizados de estudo para o ENEM. Descubra o que estudar, em que ordem e quanto evoluiu.">
   <meta name="keywords" content="ENEM, inteligência artificial, estudo personalizado, educação, startup educacional">
   <meta name="author" content="Clareia.ai">
-
-  <!-- Open Graph -->
   <meta property="og:title" content="Clareia.ai — Preparação inteligente para o ENEM">
   <meta property="og:description" content="Transforme seu desempenho em um roadmap de estudos personalizado com IA.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://clareia.ai">
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/logo.png">
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
-
-  <!-- Google tag (gtag.js) - placeholder -->
+  <!-- Google tag placeholder -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
 </head>
 <body>
+
+  <!-- ===== INTERACTIVE ORIGAMI CANVAS BACKGROUND ===== -->
+  <canvas id="origami-canvas" aria-hidden="true"></canvas>
 
   <!-- ===== HEADER ===== -->
   <header class="header" role="banner">
@@ -43,67 +32,55 @@
         <img src="images/logo.png" alt="Clareia.ai Logo" width="40" height="40">
         <span class="logo-text">clareia<span>.ai</span></span>
       </a>
-
       <nav class="nav-links" role="navigation" aria-label="Navegação principal">
         <a href="#problema">Problema</a>
         <a href="#valor">Proposta</a>
         <a href="#funcionalidades">Funcionalidades</a>
         <a href="#como-funciona">Como Funciona</a>
-        <a href="#waitlist" class="btn-nav">Quero ser avisado</a>
+        <a href="#waitlist" class="btn-nav">◇ Quero ser avisado</a>
       </nav>
-
       <button class="mobile-toggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="hero" role="main">
-    <div class="hero-particles">
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-    </div>
+    <!-- Floating origami decorations -->
+    <div class="hero-origami-piece"></div>
+    <div class="hero-origami-piece"></div>
+    <div class="hero-origami-piece"></div>
+    <div class="hero-origami-piece"></div>
+    <div class="hero-origami-piece"></div>
 
     <div class="container hero-grid">
       <div class="hero-content">
         <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          IA aplicada à educação
+          <span class="hero-badge-diamond"></span>
+          IA aplicada à educação ◇
         </div>
-
         <h1 class="hero-title">
           Sua preparação para o <span class="text-gradient">ENEM</span><br>
-          com clareza e inteligência
+          com <span class="text-gradient-pink">clareza</span> e inteligência
         </h1>
-
         <p class="hero-description">
           A Clareia.ai usa inteligência artificial para criar um plano de estudos
           personalizado baseado no seu desempenho. Descubra exatamente o que estudar,
           em que ordem e quanto evoluiu.
         </p>
-
         <div class="hero-buttons">
           <a href="#waitlist" class="btn btn-primary">
-            Entrar na lista de espera
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            ◇ Entrar na lista de espera
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </a>
           <a href="#como-funciona" class="btn btn-secondary">
-            Como funciona
+            ◆ Como funciona
           </a>
         </div>
-
         <div class="hero-stats">
           <div class="stat-item">
             <div class="stat-number">1000<span>+</span></div>
@@ -119,9 +96,10 @@
           </div>
         </div>
       </div>
-
       <div class="hero-visual">
-        <img src="images/hero-illustration.svg" alt="Ilustração conceitual - IA e educação" width="520" height="430">
+        <div class="hero-visual-inner">
+          <img src="images/hero-origami.svg" alt="Ilustração conceitual - Origami e conhecimento" width="520" height="430">
+        </div>
       </div>
     </div>
   </section>
@@ -134,11 +112,10 @@
         <h2 class="section-title">Estudar para o ENEM não precisa ser <span class="text-gradient">confuso</span></h2>
         <p class="section-subtitle">Milhares de estudantes enfrentam os mesmos obstáculos. A Clareia.ai está aqui para mudar isso.</p>
       </div>
-
       <div class="problem-grid">
-        <div class="problem-card">
+        <div class="problem-card reveal">
           <div class="problem-card-header">
-            <div class="problem-icon danger">😰</div>
+            <div class="problem-icon danger">◇</div>
             <h3>Dores do Estudante</h3>
           </div>
           <ul>
@@ -149,10 +126,9 @@
             <li>Falta de clareza sobre prioridades</li>
           </ul>
         </div>
-
-        <div class="problem-card success">
+        <div class="problem-card success reveal">
           <div class="problem-card-header">
-            <div class="problem-icon success">✨</div>
+            <div class="problem-icon success">◆</div>
             <h3>Solução Clareia.ai</h3>
           </div>
           <ul>
@@ -172,25 +148,22 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Proposta de Valor</span>
-        <h2 class="section-title">Três pilares para transformar seus <span class="text-gradient-accent">estudos</span></h2>
+        <h2 class="section-title">Três pilares para transformar seus <span class="text-gradient">estudos</span></h2>
         <p class="section-subtitle">Tecnologia, personalização e clareza — tudo que você precisa para chegar mais longe.</p>
       </div>
-
       <div class="value-cards">
         <div class="value-card reveal">
-          <div class="value-icon pink">🎯</div>
+          <div class="value-icon pink">◇</div>
           <h3>Diagnóstico Inteligente</h3>
           <p>Descubra seus pontos fortes e fracos com uma avaliação precisa do seu desempenho atual.</p>
         </div>
-
         <div class="value-card reveal">
-          <div class="value-icon blue">🗺️</div>
+          <div class="value-icon blue">◆</div>
           <h3>Roadmap Personalizado</h3>
           <p>Cada aluno recebe uma trilha de estudos única, baseada em nota atual, objetivo e frequência.</p>
         </div>
-
         <div class="value-card reveal">
-          <div class="value-icon cyan">📈</div>
+          <div class="value-icon cyan">◇</div>
           <h3>Evolução Mensurável</h3>
           <p>Visualize seu progresso em tempo real com dashboards que mostram exatamente sua evolução.</p>
         </div>
@@ -206,40 +179,34 @@
         <h2 class="section-title">Tudo que você precisa em um só <span class="text-gradient">lugar</span></h2>
         <p class="section-subtitle">Da avaliação inicial ao acompanhamento contínuo — a Clareia.ai cobre cada etapa da sua jornada.</p>
       </div>
-
       <div class="features-grid">
         <div class="feature-card reveal">
-          <img src="images/feature-diagnostico.svg" alt="Diagnóstico Inicial" width="80" height="80" loading="lazy">
+          <img src="images/feature-diagnostico.svg" alt="Diagnóstico Inicial" width="90" height="90" loading="lazy">
           <h3>Diagnóstico Inicial</h3>
           <p>Avaliação completa do seu nível atual com análise de competências do ENEM.</p>
         </div>
-
         <div class="feature-card reveal">
-          <img src="images/feature-roadmap.svg" alt="Roadmap Inteligente" width="80" height="80" loading="lazy">
+          <img src="images/feature-roadmap.svg" alt="Roadmap Inteligente" width="90" height="90" loading="lazy">
           <h3>Roadmap Inteligente</h3>
           <p>Plano de estudos personalizado que se adapta conforme você evolui.</p>
         </div>
-
         <div class="feature-card reveal">
-          <img src="images/feature-dashboard.svg" alt="Dashboard de Evolução" width="80" height="80" loading="lazy">
+          <img src="images/feature-dashboard.svg" alt="Dashboard de Evolução" width="90" height="90" loading="lazy">
           <h3>Dashboard de Evolução</h3>
           <p>Visualização clara do seu progresso ao longo do tempo com métricas reais.</p>
         </div>
-
         <div class="feature-card reveal">
-          <img src="images/feature-simulado.svg" alt="Simulados Inteligentes" width="80" height="80" loading="lazy">
+          <img src="images/feature-simulado.svg" alt="Simulados Inteligentes" width="90" height="90" loading="lazy">
           <h3>Simulados Inteligentes</h3>
           <p>Simulados com análise automatizada e recomendações pós-teste.</p>
         </div>
-
         <div class="feature-card reveal">
-          <img src="images/feature-competencias.svg" alt="Análise de Competências" width="80" height="80" loading="lazy">
+          <img src="images/feature-competencias.svg" alt="Análise de Competências" width="90" height="90" loading="lazy">
           <h3>Análise de Competências</h3>
           <p>Mapeamento detalhado das competências do ENEM com gaps identificados.</p>
         </div>
-
         <div class="feature-card reveal">
-          <img src="images/feature-assistente.svg" alt="Assistente Educacional com IA" width="80" height="80" loading="lazy">
+          <img src="images/feature-assistente.svg" alt="Assistente Educacional com IA" width="90" height="90" loading="lazy">
           <h3>Assistente com IA</h3>
           <p>Chat inteligente para tirar dúvidas e receber suporte nos estudos.</p>
         </div>
@@ -249,36 +216,35 @@
 
   <!-- ===== COMO FUNCIONA ===== -->
   <section class="section how-section" id="como-funciona">
+    <div class="how-origami"></div>
+    <div class="how-origami"></div>
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" style="color: var(--accent);">Como Funciona</span>
+        <span class="section-tag" style="color: var(--accent); background: rgba(0,181,216,0.08);">Como Funciona</span>
         <h2 class="section-title" style="color: white;">Sua jornada em <span class="text-gradient">3 passos</span></h2>
-        <p class="section-subtitle" style="color: rgba(255,255,255,0.6);">Simples, rápido e totalmente personalizado.</p>
+        <p class="section-subtitle" style="color: rgba(255,255,255,0.5);">Simples, rápido e totalmente personalizado.</p>
       </div>
-
       <div class="steps-grid">
         <div class="step-card reveal">
           <div class="step-number">1</div>
           <div class="step-image">
-            <img src="images/step-diagnostico.svg" alt="Faça seu diagnóstico" width="160" height="140" loading="lazy">
+            <img src="images/step-diagnostico.svg" alt="Faça seu diagnóstico" width="170" height="150" loading="lazy">
           </div>
           <h3>Faça seu Diagnóstico</h3>
           <p>Responda a uma avaliação inicial e descubra seu nível atual em cada área de conhecimento.</p>
         </div>
-
         <div class="step-card reveal">
           <div class="step-number">2</div>
           <div class="step-image">
-            <img src="images/step-roadmap.svg" alt="Receba seu Roadmap" width="160" height="140" loading="lazy">
+            <img src="images/step-roadmap.svg" alt="Receba seu Roadmap" width="170" height="150" loading="lazy">
           </div>
           <h3>Receba seu Roadmap</h3>
           <p>A IA analisa seus dados e gera um plano de estudos personalizado com prioridades claras.</p>
         </div>
-
         <div class="step-card reveal">
           <div class="step-number">3</div>
           <div class="step-image">
-            <img src="images/step-evolucao.svg" alt="Acompanhe sua Evolução" width="160" height="140" loading="lazy">
+            <img src="images/step-evolucao.svg" alt="Acompanhe sua Evolução" width="170" height="150" loading="lazy">
           </div>
           <h3>Acompanhe sua Evolução</h3>
           <p>Estude, faça simulados e veja seu progresso em tempo real. O roadmap se ajusta sozinho.</p>
@@ -295,12 +261,11 @@
           <span class="section-tag">Lista de Espera</span>
           <h2 class="section-title">Quer ser um dos <span class="text-gradient">primeiros</span>?</h2>
           <p>Ainda estamos em desenvolvimento, mas você pode garantir acesso antecipado. Deixe seu e-mail e seja o primeiro a saber quando lançarmos.</p>
-
           <form id="waitlist-form" novalidate>
             <div class="form-group">
               <input type="text" placeholder="Seu nome" aria-label="Seu nome" required>
               <input type="email" placeholder="Seu melhor e-mail" aria-label="Seu e-mail" required>
-              <button type="submit" class="btn btn-primary btn-small">Quero acesso</button>
+              <button type="submit" class="btn btn-primary btn-small">◇ Quero acesso</button>
             </div>
             <p class="form-disclaimer">
               Ao se inscrever, você concorda com nossa <a href="#">Política de Privacidade</a>.
@@ -329,7 +294,6 @@
             <a href="#" class="social-link" aria-label="YouTube">▶️</a>
           </div>
         </div>
-
         <div>
           <h4>Produto</h4>
           <ul class="footer-links">
@@ -339,7 +303,6 @@
             <li><a href="#">Roadmap Público</a></li>
           </ul>
         </div>
-
         <div>
           <h4>Empresa</h4>
           <ul class="footer-links">
@@ -349,7 +312,6 @@
             <li><a href="#">Contato</a></li>
           </ul>
         </div>
-
         <div>
           <h4>Legal</h4>
           <ul class="footer-links">
@@ -359,7 +321,6 @@
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
         <span>&copy; 2026 Clareia.ai. Todos os direitos reservados.</span>
         <span>Feito com 💜 para estudantes brasileiros</span>
@@ -367,10 +328,7 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="js/main.js"></script>
-
-  <!-- JSON-LD Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -378,11 +336,7 @@
     "name": "Clareia.ai",
     "description": "Startup educacional que utiliza IA para preparação personalizada para o ENEM.",
     "url": "https://clareia.ai",
-    "foundingDate": "2026",
-    "sameAs": [
-      "https://instagram.com/clareiaai",
-      "https://linkedin.com/company/clareiaai"
-    ]
+    "foundingDate": "2026"
   }
   </script>
 </body>
