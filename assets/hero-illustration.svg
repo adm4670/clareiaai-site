@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 560" fill="none">
+  <defs>
+    <linearGradient id="hg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c8ee5"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="hg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#0c8ee5"/>
+    </linearGradient>
+    <radialGradient id="gg">
+      <stop offset="0%" stop-color="#0c8ee5" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow1" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#0c8ee5" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Background glow -->
+  <ellipse cx="300" cy="280" rx="280" ry="260" fill="url(#gg)"/>
+
+  <!-- Main card mockup -->
+  <rect x="80" y="80" width="440" height="400" rx="28" fill="white" filter="url(#shadow1)"/>
+  <rect x="80" y="80" width="440" height="400" rx="28" stroke="url(#hg)" stroke-width="1" opacity="0.15"/>
+
+  <!-- Card header -->
+  <rect x="100" y="100" width="400" height="24" rx="6" fill="#f3f4f6"/>
+  <circle cx="112" cy="112" r="4" fill="#ef4444"/>
+  <circle cx="124" cy="112" r="4" fill="#f59e0b"/>
+  <circle cx="136" cy="112" r="4" fill="#10b981"/>
+  <rect x="160" y="107" width="120" height="10" rx="3" fill="#e5e7eb"/>
+
+  <!-- Dashboard content -->
+  <!-- Stats row -->
+  <rect x="100" y="140" width="120" height="60" rx="10" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="110" y="162" font-family="Inter, sans-serif" font-weight="700" font-size="18" fill="#0c8ee5">620</text>
+  <text x="110" y="182" font-family="Inter, sans-serif" font-size="9" fill="#6b7280">Nota Atual</text>
+
+  <rect x="230" y="140" width="120" height="60" rx="10" fill="#faf5ff" stroke="#e9d5ff" stroke-width="1"/>
+  <text x="240" y="162" font-family="Inter, sans-serif" font-weight="700" font-size="18" fill="#7c3aed">780</text>
+  <text x="240" y="182" font-family="Inter, sans-serif" font-size="9" fill="#6b7280">Nota Objetivo</text>
+
+  <rect x="360" y="140" width="120" height="60" rx="10" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="370" y="162" font-family="Inter, sans-serif" font-weight="700" font-size="18" fill="#16a34a">+160</text>
+  <text x="370" y="182" font-family="Inter, sans-serif" font-size="9" fill="#6b7280">Faltam</text>
+
+  <!-- Chart -->
+  <rect x="100" y="215" width="260" height="150" rx="12" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  
+  <!-- Chart grid lines -->
+  <line x1="120" y1="240" x2="340" y2="240" stroke="#e5e7eb" stroke-width="0.5"/>
+  <line x1="120" y1="270" x2="340" y2="270" stroke="#e5e7eb" stroke-width="0.5"/>
+  <line x1="120" y1="300" x2="340" y2="300" stroke="#e5e7eb" stroke-width="0.5"/>
+  <line x1="120" y1="330" x2="340" y2="330" stroke="#e5e7eb" stroke-width="0.5"/>
+
+  <!-- Chart line -->
+  <path d="M120 340 L150 310 L180 315 L210 285 L240 270 L270 275 L300 250 L340 235" stroke="url(#hg)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M120 340 L150 310 L180 315 L210 285 L240 270 L270 275 L300 250 L340 235 L340 350 L120 350 Z" fill="url(#hg)" opacity="0.08"/>
+  
+  <circle cx="340" cy="235" r="6" fill="white" stroke="url(#hg)" stroke-width="2.5">
+    <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Side progress bars -->
+  <rect x="375" y="215" width="145" height="150" rx="12" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  
+  <text x="385" y="238" font-family="Inter, sans-serif" font-weight="500" font-size="10" fill="#6b7280">Matemática</text>
+  <rect x="385" y="244" width="125" height="6" rx="3" fill="#e5e7eb"/>
+  <rect x="385" y="244" width="90" height="6" rx="3" fill="#0c8ee5" opacity="0.7"/>
+
+  <text x="385" y="265" font-family="Inter" font-weight="500" font-size="10" fill="#6b7280">Linguagens</text>
+  <rect x="385" y="271" width="125" height="6" rx="3" fill="#e5e7eb"/>
+  <rect x="385" y="271" width="70" height="6" rx="3" fill="#7c3aed" opacity="0.7"/>
+
+  <text x="385" y="292" font-family="Inter" font-weight="500" font-size="10" fill="#6b7280">Natureza</text>
+  <rect x="385" y="298" width="125" height="6" rx="3" fill="#e5e7eb"/>
+  <rect x="385" y="298" width="100" height="6" rx="3" fill="#06b6d4" opacity="0.7"/>
+
+  <text x="385" y="319" font-family="Inter" font-weight="500" font-size="10" fill="#6b7280">Humanas</text>
+  <rect x="385" y="325" width="125" height="6" rx="3" fill="#e5e7eb"/>
+  <rect x="385" y="325" width="55" height="6" rx="3" fill="#a855f7" opacity="0.7"/>
+
+  <!-- Bottom info bar -->
+  <rect x="100" y="380" width="380" height="40" rx="10" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+  <path d="M112 400 L118 395 L124 400 L130 392 L136 400" stroke="#16a34a" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="145" y="405" font-family="Inter, sans-serif" font-size="12" fill="#059669" font-weight="500">Seu plano de estudos está otimizado para hoje</text>
+
+  <!-- Floating elements outside card -->
+  <!-- AI Badge -->
+  <g transform="translate(450, 60)" filter="url(#shadow1)">
+    <rect x="0" y="0" width="100" height="36" rx="18" fill="white"/>
+    <rect x="4" y="4" width="28" height="28" rx="14" fill="#eff6ff"/>
+    <path d="M12 18 L16 14 L20 18 L24 12" stroke="#0c8ee5" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="40" y="23" font-family="Inter, sans-serif" font-size="11" fill="#374151" font-weight="600">IA Ativa</text>
+    <circle cx="88" cy="18" r="4" fill="#10b981">
+      <animate attributeName="opacity" values="1;0.4;1" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Notification badge -->
+  <g transform="translate(60, 420)" filter="url(#shadow1)">
+    <rect x="0" y="0" width="140" height="44" rx="10" fill="white"/>
+    <rect x="8" y="8" width="28" height="28" rx="8" fill="#fef2f2"/>
+    <text x="16" y="27" font-family="Inter" font-size="12" fill="#dc2626">!</text>
+    <text x="44" y="22" font-family="Inter, sans-serif" font-size="10" fill="#374151" font-weight="600">Nova evolução!</text>
+    <text x="44" y="35" font-family="Inter" font-size="9" fill="#6b7280">+12 pontos em Matemática</text>
+  </g>
+
+  <!-- Star decorations -->
+  <g opacity="0.5">
+    <path d="M40 100 L43 93 L46 100 L53 103 L46 106 L43 113 L40 106 L33 103 Z" fill="#0c8ee5">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M530 140 L533 133 L536 140 L543 143 L536 146 L533 153 L530 146 L523 143 Z" fill="#7c3aed">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M520 480 L523 473 L526 480 L533 483 L526 486 L523 493 L520 486 L513 483 Z" fill="#06b6d4">
+      <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Graduation cap central icon -->
+  <g transform="translate(300, 30)" opacity="0.8">
+    <path d="M-20-6 L0-18 L20-6 L0 6 Z" fill="url(#hg)" opacity="0.6"/>
+    <rect x="-5" y="4" width="10" height="6" rx="2" fill="#0c8ee5" opacity="0.4"/>
+  </g>
+</svg>

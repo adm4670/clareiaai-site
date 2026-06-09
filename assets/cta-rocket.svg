@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+      <defs>
+        <linearGradient id="ctaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#0c8ee5"/>
+          <stop offset="100%" stop-color="#7c3aed"/>
+        </linearGradient>
+      </defs>
+      <g transform="translate(150, 160)">
+        <path d="M-10 40 Q0 70 10 40" fill="url(#ctaGrad)" opacity="0.3"/>
+        <path d="M-6 40 Q0 60 6 40" fill="url(#ctaGrad)" opacity="0.2"/>
+        <path d="M-3 40 Q0 50 3 40" fill="white" opacity="0.5"/>
+        <path d="M-18 -20 L-18 20 C-18 30 -12 38 0 40 C12 38 18 30 18 20 L18 -20 Z" fill="white" stroke="url(#ctaGrad)" stroke-width="1.5"/>
+        <path d="M-18 -20 C-12 -30 -6 -50 0 -60 C6 -50 12 -30 18 -20 Z" fill="url(#ctaGrad)" opacity="0.15" stroke="url(#ctaGrad)" stroke-width="1.5"/>
+        <circle cx="0" cy="-5" r="8" fill="url(#ctaGrad)" opacity="0.1" stroke="url(#ctaGrad)" stroke-width="1" stroke-opacity="0.3"/>
+        <circle cx="0" cy="-5" r="4" fill="url(#ctaGrad)" opacity="0.15"/>
+        <path d="M-18 15 L-28 30 L-18 25 Z" fill="url(#ctaGrad)" opacity="0.15" stroke="url(#ctaGrad)" stroke-width="1"/>
+        <path d="M18 15 L28 30 L18 25 Z" fill="url(#ctaGrad)" opacity="0.15" stroke="url(#ctaGrad)" stroke-width="1"/>
+      </g>
+      <circle cx="80" cy="60" r="2" fill="#0c8ee5" opacity="0.4"/>
+      <circle cx="220" cy="40" r="1.5" fill="#7c3aed" opacity="0.4"/>
+      <circle cx="100" cy="200" r="1.5" fill="#0c8ee5" opacity="0.4"/>
+      <circle cx="200" cy="220" r="2" fill="#7c3aed" opacity="0.4"/>
+      <path d="M140 250 L150 230 L160 250" fill="none" stroke="url(#ctaGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+    </svg>

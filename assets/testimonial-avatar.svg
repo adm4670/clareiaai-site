@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="48" fill="url(#avatar-bg)" opacity="0.15"/>
+  <circle cx="50" cy="50" r="45" fill="white" stroke="url(#avatar-border)" stroke-width="1.5"/>
+  <circle cx="50" cy="38" r="15" fill="url(#avatar-grad)" opacity="0.2"/>
+  <ellipse cx="50" cy="70" rx="20" ry="14" fill="url(#avatar-grad)" opacity="0.15"/>
+  <circle cx="44" cy="36" r="2.5" fill="#374151"/>
+  <circle cx="56" cy="36" r="2.5" fill="#374151"/>
+  <path d="M43 44 Q50 50 57 44" stroke="#374151" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
+  <defs>
+    <linearGradient id="avatar-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c8ee5"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="avatar-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c8ee5"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="avatar-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c8ee5"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+</svg>

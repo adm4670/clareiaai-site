@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" fill="none">
+  <defs>
+    <linearGradient id="dg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c8ee5"/><stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="dg2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0c8ee5"/><stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <filter id="df1"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0c8ee5" flood-opacity="0.04"/></filter>
+  </defs>
+
+  <!-- Card background -->
+  <rect x="0" y="0" width="500" height="320" rx="16" fill="white" stroke="#e5e7eb" stroke-width="1.5" filter="url(#df1)"/>
+
+  <!-- Browser top bar -->
+  <rect x="16" y="12" width="468" height="32" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <circle cx="30" cy="28" r="4" fill="#ef4444"/>
+  <circle cx="42" cy="28" r="4" fill="#f59e0b"/>
+  <circle cx="54" cy="28" r="4" fill="#10b981"/>
+  <rect x="100" y="22" width="160" height="12" rx="4" fill="#e2e8f0"/>
+  <rect x="400" y="22" width="70" height="12" rx="4" fill="#e2e8f0"/>
+
+  <!-- Sidebar -->
+  <rect x="16" y="52" width="120" height="252" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  
+  <!-- Sidebar items -->
+  <rect x="28" y="66" width="96" height="32" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <circle cx="42" cy="82" r="6" fill="#0c8ee5" opacity="0.6"/>
+  <text x="55" y="87" font-family="Inter, sans-serif" font-weight="500" font-size="10" fill="#0c8ee5">Dashboard</text>
+
+  <rect x="28" y="106" width="96" height="32" rx="8" fill="transparent"/>
+  <circle cx="42" cy="122" r="6" fill="#94a3b8" opacity="0.4"/>
+  <text x="55" y="127" font-family="Inter" font-weight="400" font-size="10" fill="#94a3b8">Roadmap</text>
+
+  <rect x="28" y="146" width="96" height="32" rx="8" fill="transparent"/>
+  <circle cx="42" cy="162" r="6" fill="#94a3b8" opacity="0.4"/>
+  <text x="55" y="167" font-family="Inter" font-weight="400" font-size="10" fill="#94a3b8">Simulados</text>
+
+  <rect x="28" y="186" width="96" height="32" rx="8" fill="transparent"/>
+  <circle cx="42" cy="202" r="6" fill="#94a3b8" opacity="0.4"/>
+  <text x="55" y="207" font-family="Inter" font-weight="400" font-size="10" fill="#94a3b8">Desempenho</text>
+
+  <rect x="28" y="226" width="96" height="32" rx="8" fill="transparent"/>
+  <circle cx="42" cy="242" r="6" fill="#94a3b8" opacity="0.4"/>
+  <text x="55" y="247" font-family="Inter" font-weight="400" font-size="10" fill="#94a3b8">Perfil</text>
+
+  <!-- Main content header -->
+  <text x="155" y="80" font-family="Inter, sans-serif" font-weight="700" font-size="15" fill="#1e293b">Seu Progresso</text>
+  
+  <!-- Progress bar -->
+  <rect x="155" y="90" width="200" height="6" rx="3" fill="#e2e8f0"/>
+  <rect x="155" y="90" width="140" height="6" rx="3" fill="url(#dg)"/>
+
+  <!-- Stats cards row -->
+  <rect x="155" y="108" width="95" height="56" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="165" y="130" font-family="Inter" font-weight="700" font-size="18" fill="#0c8ee5">620</text>
+  <text x="165" y="150" font-family="Inter" font-size="9" fill="#64748b">Nota Atual</text>
+
+  <rect x="258" y="108" width="95" height="56" rx="8" fill="#faf5ff" stroke="#e9d5ff" stroke-width="1"/>
+  <text x="268" y="130" font-family="Inter" font-weight="700" font-size="18" fill="#7c3aed">780</text>
+  <text x="268" y="150" font-family="Inter" font-size="9" fill="#64748b">Nota Objetivo</text>
+
+  <rect x="361" y="108" width="95" height="56" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="371" y="130" font-family="Inter" font-weight="700" font-size="18" fill="#16a34a">+160</text>
+  <text x="371" y="150" font-family="Inter" font-size="9" fill="#64748b">Faltam</text>
+
+  <!-- Chart area -->
+  <rect x="155" y="174" width="200" height="90" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  
+  <!-- Grid lines -->
+  <line x1="165" y1="200" x2="345" y2="200" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="165" y1="220" x2="345" y2="220" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="165" y1="240" x2="345" y2="240" stroke="#e2e8f0" stroke-width="0.5"/>
+
+  <!-- Chart line -->
+  <path d="M165 250 L190 235 L210 240 L230 220 L255 210 L280 215 L300 195 L345 182" stroke="url(#dg2)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M165 250 L190 235 L210 240 L230 220 L255 210 L280 215 L300 195 L345 182 L345 255 L165 255 Z" fill="url(#dg2)" opacity="0.08"/>
+  <circle cx="345" cy="182" r="5" fill="url(#dg2)" stroke="white" stroke-width="2">
+    <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Subjects area -->
+  <rect x="365" y="174" width="120" height="90" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+
+  <text x="375" y="194" font-family="Inter" font-weight="500" font-size="9" fill="#64748b">Matemática</text>
+  <rect x="375" y="200" width="100" height="5" rx="2.5" fill="#e2e8f0"/>
+  <rect x="375" y="200" width="72" height="5" rx="2.5" fill="#0c8ee5" opacity="0.7"/>
+
+  <text x="375" y="219" font-family="Inter" font-weight="500" font-size="9" fill="#64748b">Linguagens</text>
+  <rect x="375" y="225" width="100" height="5" rx="2.5" fill="#e2e8f0"/>
+  <rect x="375" y="225" width="55" height="5" rx="2.5" fill="#7c3aed" opacity="0.7"/>
+
+  <text x="375" y="244" font-family="Inter" font-weight="500" font-size="9" fill="#64748b">Natureza</text>
+  <rect x="375" y="250" width="100" height="5" rx="2.5" fill="#e2e8f0"/>
+  <rect x="375" y="250" width="82" height="5" rx="2.5" fill="#06b6d4" opacity="0.7"/>
+
+  <!-- Bottom info -->
+  <rect x="155" y="274" width="330" height="24" rx="6" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+  <circle cx="165" cy="286" r="4" fill="#10b981"/>
+  <text x="175" y="289" font-family="Inter" font-size="9" fill="#059669" font-weight="500">Plano atualizado hoje · Próximo simulado: 3 dias</text>
+</svg>

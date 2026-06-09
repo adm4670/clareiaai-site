@@ -1,389 +1,762 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clareia.ai — Preparação inteligente para o ENEM</title>
-  <meta name="description" content="Clareia.ai usa inteligência artificial para criar roadmaps personalizados de estudo para o ENEM. Descubra o que estudar, em que ordem e quanto evoluiu.">
-  <meta name="keywords" content="ENEM, inteligência artificial, estudo personalizado, educação, startup educacional">
-  <meta name="author" content="Clareia.ai">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clareia.ai — IA que clareia seu caminho para o ENEM</title>
+    <meta name="description" content="Clareia.ai usa inteligência artificial para criar roadmaps personalizados de estudo para o ENEM.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {50:'#f0f7ff',100:'#e0effe',200:'#b9dffc',300:'#7cc5fa',400:'#36a9f5',500:'#0c8ee5',600:'#0070c3',700:'#015a9e',800:'#064c83',900:'#0b406d',950:'#072849'},
+                        midnight: {50:'#f8fafc',100:'#f1f5f9',200:'#e2e8f0',300:'#cbd5e1',400:'#94a3b8',500:'#64748b',600:'#475569',700:'#334155',800:'#1e293b',900:'#0f172a',950:'#020617'},
+                    },
+                    fontFamily: { sans: ['Inter','system-ui','-apple-system','sans-serif'] },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+                        'spin-slow': 'spin 25s linear infinite',
+                        'shimmer': 'shimmer 2s infinite linear',
+                        'scale-in': 'scaleIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: { '0%,100%':{transform:'translateY(0px)'},'50%':{transform:'translateY(-16px)'} },
+                        fadeIn: { '0%':{opacity:'0'},'100%':{opacity:'1'} },
+                        fadeInUp: { '0%':{opacity:'0',transform:'translateY(30px)'},'100%':{opacity:'1',transform:'translateY(0)'} },
+                        pulseSoft: { '0%,100%':{opacity:'0.5'},'50%':{opacity:'0.8'} },
+                        shimmer: { '0%':{backgroundPosition:'-200% 0'},'100%':{backgroundPosition:'200% 0'} },
+                        scaleIn: { '0%':{opacity:'0',transform:'scale(0.9)'},'100%':{opacity:'1',transform:'scale(1)'} },
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; }
+        body { font-family:'Inter',system-ui,-apple-system,sans-serif; background:#fff; color:#0f172a; }
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Clareia.ai — Preparação inteligente para o ENEM">
-  <meta property="og:description" content="Transforme seu desempenho em um roadmap de estudos personalizado com IA.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://clareia.ai">
+        .gradient-text {
+            background: linear-gradient(135deg, #0c8ee5 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/logo.png">
+        .hero-bg {
+            background: radial-gradient(ellipse 80% 60% at 30% 40%, rgba(12,142,229,0.10) 0%, transparent 60%),
+                        radial-gradient(ellipse 80% 60% at 70% 60%, rgba(124,58,237,0.08) 0%, transparent 60%),
+                        radial-gradient(ellipse 100% 40% at 50% 100%, rgba(12,142,229,0.04) 0%, transparent 60%);
+        }
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+        .glass {
+            background: rgba(255,255,255,0.75);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/style.css">
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 48px -12px rgba(0,0,0,0.12);
+        }
 
-  <!-- Google tag (gtag.js) - placeholder -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
+        .img-reveal {
+            transition: all 0.6s cubic-bezier(0.4,0,0.2,1);
+        }
+        .img-reveal:hover {
+            transform: scale(1.03);
+        }
+
+        .cta-grad {
+            background: linear-gradient(135deg, #0c8ee5 0%, #7c3aed 100%);
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s cubic-bezier(0.4,0,0.2,1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay:0.1s; }
+        .reveal-delay-2 { transition-delay:0.2s; }
+        .reveal-delay-3 { transition-delay:0.3s; }
+        .reveal-delay-4 { transition-delay:0.4s; }
+
+        /* Shimmer loading effect for images */
+        .shimmer-load {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite linear;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* Divider */
+        .divider-gradient {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(12,142,229,0.15), rgba(124,58,237,0.15), transparent);
+        }
+
+        @media (max-width: 768px) {
+            .hero-bg {
+                background: radial-gradient(ellipse 100% 50% at 50% 30%, rgba(12,142,229,0.08) 0%, transparent 70%);
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header class="header" role="banner">
-    <div class="container header-inner">
-      <a href="#" class="logo" aria-label="Clareia.ai - Voltar ao início">
-        <img src="images/logo.png" alt="Clareia.ai Logo" width="40" height="40">
-        <span class="logo-text">clareia<span>.ai</span></span>
-      </a>
-
-      <nav class="nav-links" role="navigation" aria-label="Navegação principal">
-        <a href="#problema">Problema</a>
-        <a href="#valor">Proposta</a>
-        <a href="#funcionalidades">Funcionalidades</a>
-        <a href="#como-funciona">Como Funciona</a>
-        <a href="#waitlist" class="btn-nav">Quero ser avisado</a>
-      </nav>
-
-      <button class="mobile-toggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="hero" role="main">
-    <div class="hero-particles">
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-    </div>
-
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          IA aplicada à educação
-        </div>
-
-        <h1 class="hero-title">
-          Sua preparação para o <span class="text-gradient">ENEM</span><br>
-          com clareza e inteligência
-        </h1>
-
-        <p class="hero-description">
-          A Clareia.ai usa inteligência artificial para criar um plano de estudos
-          personalizado baseado no seu desempenho. Descubra exatamente o que estudar,
-          em que ordem e quanto evoluiu.
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#waitlist" class="btn btn-primary">
-            Entrar na lista de espera
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-          <a href="#como-funciona" class="btn btn-secondary">
-            Como funciona
-          </a>
-        </div>
-
-        <div class="hero-stats">
-          <div class="stat-item">
-            <div class="stat-number">1000<span>+</span></div>
-            <div class="stat-label">Estudantes impactados</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">95<span>%</span></div>
-            <div class="stat-label">Satisfação nos testes</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">4.9<span>×</span></div>
-            <div class="stat-label">Mais eficiência nos estudos</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <img src="images/hero-illustration.svg" alt="Ilustração conceitual - IA e educação" width="520" height="430">
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PROBLEMA / SOLUÇÃO ===== -->
-  <section class="section problem-section" id="problema">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">O Problema</span>
-        <h2 class="section-title">Estudar para o ENEM não precisa ser <span class="text-gradient">confuso</span></h2>
-        <p class="section-subtitle">Milhares de estudantes enfrentam os mesmos obstáculos. A Clareia.ai está aqui para mudar isso.</p>
-      </div>
-
-      <div class="problem-grid">
-        <div class="problem-card">
-          <div class="problem-card-header">
-            <div class="problem-icon danger">😰</div>
-            <h3>Dores do Estudante</h3>
-          </div>
-          <ul>
-            <li>Excesso de conteúdo sem direcionamento</li>
-            <li>Dificuldade em organizar cronogramas</li>
-            <li>Baixa percepção da própria evolução</li>
-            <li>Estudos genéricos que ignoram seu desempenho</li>
-            <li>Falta de clareza sobre prioridades</li>
-          </ul>
-        </div>
-
-        <div class="problem-card success">
-          <div class="problem-card-header">
-            <div class="problem-icon success">✨</div>
-            <h3>Solução Clareia.ai</h3>
-          </div>
-          <ul>
-            <li>Diagnóstico personalizado do seu nível</li>
-            <li>Roadmap de estudos adaptativo</li>
-            <li>Acompanhamento contínuo da evolução</li>
-            <li>Recomendações baseadas em dados reais</li>
-            <li>Clareza total sobre o que estudar e quando</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PROPOSTA DE VALOR ===== -->
-  <section class="section value-section" id="valor">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Proposta de Valor</span>
-        <h2 class="section-title">Três pilares para transformar seus <span class="text-gradient-accent">estudos</span></h2>
-        <p class="section-subtitle">Tecnologia, personalização e clareza — tudo que você precisa para chegar mais longe.</p>
-      </div>
-
-      <div class="value-cards">
-        <div class="value-card reveal">
-          <div class="value-icon pink">🎯</div>
-          <h3>Diagnóstico Inteligente</h3>
-          <p>Descubra seus pontos fortes e fracos com uma avaliação precisa do seu desempenho atual.</p>
-        </div>
-
-        <div class="value-card reveal">
-          <div class="value-icon blue">🗺️</div>
-          <h3>Roadmap Personalizado</h3>
-          <p>Cada aluno recebe uma trilha de estudos única, baseada em nota atual, objetivo e frequência.</p>
-        </div>
-
-        <div class="value-card reveal">
-          <div class="value-icon cyan">📈</div>
-          <h3>Evolução Mensurável</h3>
-          <p>Visualize seu progresso em tempo real com dashboards que mostram exatamente sua evolução.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FUNCIONALIDADES ===== -->
-  <section class="section features-section" id="funcionalidades">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Funcionalidades</span>
-        <h2 class="section-title">Tudo que você precisa em um só <span class="text-gradient">lugar</span></h2>
-        <p class="section-subtitle">Da avaliação inicial ao acompanhamento contínuo — a Clareia.ai cobre cada etapa da sua jornada.</p>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-card reveal">
-          <img src="images/feature-diagnostico.svg" alt="Diagnóstico Inicial" width="80" height="80" loading="lazy">
-          <h3>Diagnóstico Inicial</h3>
-          <p>Avaliação completa do seu nível atual com análise de competências do ENEM.</p>
-        </div>
-
-        <div class="feature-card reveal">
-          <img src="images/feature-roadmap.svg" alt="Roadmap Inteligente" width="80" height="80" loading="lazy">
-          <h3>Roadmap Inteligente</h3>
-          <p>Plano de estudos personalizado que se adapta conforme você evolui.</p>
-        </div>
-
-        <div class="feature-card reveal">
-          <img src="images/feature-dashboard.svg" alt="Dashboard de Evolução" width="80" height="80" loading="lazy">
-          <h3>Dashboard de Evolução</h3>
-          <p>Visualização clara do seu progresso ao longo do tempo com métricas reais.</p>
-        </div>
-
-        <div class="feature-card reveal">
-          <img src="images/feature-simulado.svg" alt="Simulados Inteligentes" width="80" height="80" loading="lazy">
-          <h3>Simulados Inteligentes</h3>
-          <p>Simulados com análise automatizada e recomendações pós-teste.</p>
-        </div>
-
-        <div class="feature-card reveal">
-          <img src="images/feature-competencias.svg" alt="Análise de Competências" width="80" height="80" loading="lazy">
-          <h3>Análise de Competências</h3>
-          <p>Mapeamento detalhado das competências do ENEM com gaps identificados.</p>
-        </div>
-
-        <div class="feature-card reveal">
-          <img src="images/feature-assistente.svg" alt="Assistente Educacional com IA" width="80" height="80" loading="lazy">
-          <h3>Assistente com IA</h3>
-          <p>Chat inteligente para tirar dúvidas e receber suporte nos estudos.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== COMO FUNCIONA ===== -->
-  <section class="section how-section" id="como-funciona">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag" style="color: var(--accent);">Como Funciona</span>
-        <h2 class="section-title" style="color: white;">Sua jornada em <span class="text-gradient">3 passos</span></h2>
-        <p class="section-subtitle" style="color: rgba(255,255,255,0.6);">Simples, rápido e totalmente personalizado.</p>
-      </div>
-
-      <div class="steps-grid">
-        <div class="step-card reveal">
-          <div class="step-number">1</div>
-          <div class="step-image">
-            <img src="images/step-diagnostico.svg" alt="Faça seu diagnóstico" width="160" height="140" loading="lazy">
-          </div>
-          <h3>Faça seu Diagnóstico</h3>
-          <p>Responda a uma avaliação inicial e descubra seu nível atual em cada área de conhecimento.</p>
-        </div>
-
-        <div class="step-card reveal">
-          <div class="step-number">2</div>
-          <div class="step-image">
-            <img src="images/step-roadmap.svg" alt="Receba seu Roadmap" width="160" height="140" loading="lazy">
-          </div>
-          <h3>Receba seu Roadmap</h3>
-          <p>A IA analisa seus dados e gera um plano de estudos personalizado com prioridades claras.</p>
-        </div>
-
-        <div class="step-card reveal">
-          <div class="step-number">3</div>
-          <div class="step-image">
-            <img src="images/step-evolucao.svg" alt="Acompanhe sua Evolução" width="160" height="140" loading="lazy">
-          </div>
-          <h3>Acompanhe sua Evolução</h3>
-          <p>Estude, faça simulados e veja seu progresso em tempo real. O roadmap se ajusta sozinho.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== WAITLIST ===== -->
-  <section class="section waitlist-section" id="waitlist">
-    <div class="container">
-      <div class="waitlist-container">
-        <div class="waitlist-card">
-          <span class="section-tag">Lista de Espera</span>
-          <h2 class="section-title">Quer ser um dos <span class="text-gradient">primeiros</span>?</h2>
-          <p>Ainda estamos em desenvolvimento, mas você pode garantir acesso antecipado. Deixe seu e-mail e seja o primeiro a saber quando lançarmos.</p>
-
-          <form id="waitlist-form" novalidate>
-            <div class="form-group">
-              <input type="text" placeholder="Seu nome" aria-label="Seu nome" required>
-              <input type="email" placeholder="Seu melhor e-mail" aria-label="Seu e-mail" required>
-              <button type="submit" class="btn btn-primary btn-small">Quero acesso</button>
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="#" class="flex items-center gap-3 group">
+                    <img src="assets/logo-small.png" alt="Clareia.ai" class="w-9 h-9 lg:w-10 lg:h-10 rounded-xl transition-transform duration-300 group-hover:scale-105">
+                    <span class="text-xl font-bold tracking-tight text-gray-900">Clareia<span class="text-brand-500">.ai</span></span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#problema" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors relative group">
+                        Problema
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#funcionalidades" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors relative group">
+                        Funcionalidades
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#como-funciona" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors relative group">
+                        Como Funciona
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#depoimentos" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors relative group">
+                        Depoimentos
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </div>
+                <a href="#cta" class="inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white cta-grad rounded-xl hover:shadow-lg hover:shadow-brand-500/25 transition-all duration-300">
+                    Começar agora
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </a>
             </div>
-            <p class="form-disclaimer">
-              Ao se inscrever, você concorda com nossa <a href="#">Política de Privacidade</a>.
-              Sem spam, prometemos! 💜
-            </p>
-          </form>
         </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="logo">
-            <img src="images/logo.png" alt="Clareia.ai" width="36" height="36">
-            <span class="logo-text">clareia<span>.ai</span></span>
-          </div>
-          <p>Transformando a preparação para o ENEM com inteligência artificial. Estudos mais claros, estratégicos e eficientes.</p>
-          <div class="footer-social">
-            <a href="#" class="social-link" aria-label="Instagram">📸</a>
-            <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
-            <a href="#" class="social-link" aria-label="Twitter / X">🐦</a>
-            <a href="#" class="social-link" aria-label="YouTube">▶️</a>
-          </div>
+    <!-- ===== HERO ===== -->
+    <section class="relative min-h-screen hero-bg flex items-center overflow-hidden pt-20">
+        <!-- Background image with overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&q=80" 
+                 alt="" 
+                 class="w-full h-full object-cover opacity-[0.04]"
+                 loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-b from-white/60 via-white/20 to-white/60"></div>
         </div>
 
-        <div>
-          <h4>Produto</h4>
-          <ul class="footer-links">
-            <li><a href="#funcionalidades">Funcionalidades</a></li>
-            <li><a href="#como-funciona">Como Funciona</a></li>
-            <li><a href="#waitlist">Lista de Espera</a></li>
-            <li><a href="#">Roadmap Público</a></li>
-          </ul>
+        <!-- Decorative shapes -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <div class="absolute top-1/4 -left-32 w-96 h-96 bg-brand-200/20 rounded-full blur-3xl animate-pulse-soft"></div>
+            <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl animate-pulse-soft" style="animation-delay: 1.5s"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-brand-100/10 rounded-full"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-purple-100/10 rounded-full"></div>
         </div>
 
-        <div>
-          <h4>Empresa</h4>
-          <ul class="footer-links">
-            <li><a href="#">Sobre Nós</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Carreiras</a></li>
-            <li><a href="#">Contato</a></li>
-          </ul>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-32">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <!-- Left Content -->
+                <div class="space-y-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/70 backdrop-blur-sm rounded-full border border-brand-100/50 shadow-sm reveal visible">
+                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                        <span class="text-sm font-medium text-brand-700">IA aplicada à educação</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.08] reveal visible">
+                        Sua jornada para o ENEM,<br>
+                        <span class="gradient-text">com clareza</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-gray-500 leading-relaxed max-w-xl reveal visible">
+                        A Clareia.ai usa inteligência artificial para transformar seu desempenho em um 
+                        <span class="font-semibold text-gray-800">roadmap personalizado de estudos</span>. 
+                        Descubra exatamente o que estudar, em que ordem e quanto evoluiu.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 reveal visible">
+                        <a href="#cta" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white cta-grad rounded-xl hover:shadow-xl hover:shadow-brand-500/25 transition-all duration-300 group">
+                            Quero clarear meus estudos
+                            <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </a>
+                        <a href="#funcionalidades" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-gray-700 bg-white/70 backdrop-blur-sm rounded-xl border border-gray-200/70 hover:bg-white hover:border-gray-300 transition-all duration-300">
+                            Ver funcionalidades
+                        </a>
+                    </div>
+
+                    <div class="flex items-center gap-6 pt-4 reveal visible">
+                        <div class="flex -space-x-3">
+                            <img src="assets/testimonial-avatar1.svg" alt="" class="w-9 h-9 rounded-full border-2 border-white">
+                            <img src="assets/testimonial-avatar2.svg" alt="" class="w-9 h-9 rounded-full border-2 border-white">
+                            <img src="assets/testimonial-avatar3.svg" alt="" class="w-9 h-9 rounded-full border-2 border-white">
+                        </div>
+                        <span class="text-sm text-gray-400">
+                            <span class="font-semibold text-gray-800">+2.000</span> estudantes já utilizam
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Right - Hero Illustration -->
+                <div class="relative reveal visible">
+                    <div class="relative">
+                        <div class="rounded-2xl lg:rounded-3xl bg-white shadow-2xl shadow-brand-500/5 border border-gray-100/80 overflow-hidden">
+                            <img src="assets/hero-illustration.svg" alt="Clareia.ai - Dashboard de estudos com IA" class="w-full h-auto">
+                        </div>
+                        <!-- Floating badges -->
+                        <div class="absolute -bottom-3 -right-3 bg-white rounded-xl shadow-lg border border-gray-100 p-3 flex items-center gap-2 animate-float">
+                            <img src="assets/logo-small.png" alt="" class="w-8 h-8 rounded-lg">
+                            <div class="text-xs leading-tight">
+                                <div class="font-bold text-gray-900">Clareia.ai</div>
+                                <div class="text-brand-500 font-medium">v2.0 · IA Ativa</div>
+                            </div>
+                        </div>
+                        <div class="absolute -top-3 -left-3 bg-white rounded-xl shadow-lg border border-gray-100 px-3 py-2 animate-float-delayed">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                                <span class="text-xs font-medium text-gray-600">Online · 214 estudando agora</span>
+                            </div>
+                        </div>
+                        <!-- Decorative rings -->
+                        <div class="absolute -inset-4 rounded-[2rem] border border-brand-100/30 -z-10"></div>
+                        <div class="absolute -inset-8 rounded-[2.5rem] border border-brand-50/20 -z-20"></div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div>
-          <h4>Legal</h4>
-          <ul class="footer-links">
-            <li><a href="#">Privacidade</a></li>
-            <li><a href="#">Termos de Uso</a></li>
-            <li><a href="#">Cookies</a></li>
-          </ul>
+    <!-- ===== STATS BAR ===== -->
+    <section class="border-y border-gray-100 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
+                <div class="text-center reveal">
+                    <div class="text-3xl lg:text-4xl font-bold text-gray-900 mb-1">95%</div>
+                    <div class="text-sm text-gray-400">de alunos aprovados</div>
+                </div>
+                <div class="text-center reveal reveal-delay-1">
+                    <div class="text-3xl lg:text-4xl font-bold text-gray-900 mb-1">+2.000</div>
+                    <div class="text-sm text-gray-400">estudantes ativos</div>
+                </div>
+                <div class="text-center reveal reveal-delay-2">
+                    <div class="text-3xl lg:text-4xl font-bold text-gray-900 mb-1">+150</div>
+                    <div class="text-sm text-gray-400">pontos de evolução média</div>
+                </div>
+                <div class="text-center reveal reveal-delay-3">
+                    <div class="text-3xl lg:text-4xl font-bold text-gray-900 mb-1">4.8★</div>
+                    <div class="text-sm text-gray-400">avaliação dos usuários</div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="footer-bottom">
-        <span>&copy; 2026 Clareia.ai. Todos os direitos reservados.</span>
-        <span>Feito com 💜 para estudantes brasileiros</span>
-      </div>
-    </div>
-  </footer>
+    <!-- ===== PROBLEM / SOLUTION ===== -->
+    <section id="problema" class="py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <div class="reveal">
+                    <span class="text-sm font-semibold text-brand-600 uppercase tracking-widest">O Problema</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mt-4 mb-6">
+                        Estudar para o ENEM<br>
+                        <span class="text-gray-300">não precisa ser um caos</span>
+                    </h2>
+                    <p class="text-lg text-gray-500 leading-relaxed mb-8">
+                        Muitos estudantes se perdem no excesso de conteúdo, na falta de direcionamento e na 
+                        dificuldade de organizar um cronograma que realmente funcione. O resultado? 
+                        Horas de estudo que não se traduzem em evolução.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                            <span class="text-gray-500">Excesso de conteúdo sem priorização</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                            <span class="text-gray-500">Falta de direcionamento personalizado</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                            <span class="text-gray-500">Baixa percepção da própria evolução</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                            <span class="text-gray-500">Estudos genéricos que ignoram seu desempenho real</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative reveal reveal-delay-2">
+                    <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100 img-reveal">
+                        <img src="assets/problem-solution-visual.svg" alt="Antes e depois - Clareia.ai transforma o caos em clareza" class="w-full h-auto">
+                    </div>
+                    <div class="absolute -bottom-3 -left-3 bg-white rounded-xl shadow-lg border border-gray-100 p-3 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-green-50 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <div class="text-xs leading-tight">
+                            <div class="font-semibold text-gray-900">Transformação real</div>
+                            <div class="text-gray-400">+150 pontos em média</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Scripts -->
-  <script src="js/main.js"></script>
+    <!-- ===== FEATURES SECTION ===== -->
+    <section id="funcionalidades" class="py-24 lg:py-32 bg-gray-50/40">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+                <span class="text-sm font-semibold text-brand-600 uppercase tracking-widest reveal">Funcionalidades</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mt-4 mb-6 reveal reveal-delay-1">
+                    Tudo que você precisa para<br>
+                    <span class="gradient-text">clarear seus estudos</span>
+                </h2>
+                <p class="text-lg text-gray-500 leading-relaxed reveal reveal-delay-2">
+                    Uma plataforma completa com inteligência artificial para transformar sua preparação para o ENEM.
+                </p>
+            </div>
 
-  <!-- JSON-LD Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "Clareia.ai",
-    "description": "Startup educacional que utiliza IA para preparação personalizada para o ENEM.",
-    "url": "https://clareia.ai",
-    "foundingDate": "2026",
-    "sameAs": [
-      "https://instagram.com/clareiaai",
-      "https://linkedin.com/company/clareiaai"
-    ]
-  }
-  </script>
+            <!-- Features concept illustration -->
+            <div class="mb-16 flex justify-center reveal">
+                <div class="w-full max-w-3xl rounded-2xl bg-white shadow-sm border border-gray-100/80 p-6 lg:p-8 img-reveal">
+                    <img src="assets/features-illustration.svg" alt="Módulos conectados por IA" class="w-full h-auto">
+                </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Card 1 -->
+                <div class="card-hover bg-white rounded-2xl p-8 lg:p-10 shadow-sm border border-gray-100/60 group reveal">
+                    <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Diagnóstico Inicial</h3>
+                    <p class="text-gray-500 leading-relaxed">Avaliação completa do seu nível atual com IA, identificando exatamente onde você está e o que precisa evoluir.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card-hover bg-white rounded-2xl p-8 lg:p-10 shadow-sm border border-gray-100/60 group reveal reveal-delay-1">
+                    <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Roadmap Personalizado</h3>
+                    <p class="text-gray-500 leading-relaxed">Plano de estudos único baseado na sua nota atual, objetivo, áreas de conhecimento e frequência de estudos.</p>
+                </div>
+
+                <!-- Card 3 - Dashboard with preview -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100/60 group reveal reveal-delay-2">
+                    <div class="p-8 lg:p-10 pb-0">
+                        <div class="w-12 h-12 rounded-xl bg-pink-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Dashboard de Evolução</h3>
+                        <p class="text-gray-500 leading-relaxed">Visualização clara do seu progresso ao longo do tempo com gráficos e métricas que mostram sua evolução real.</p>
+                    </div>
+                    <div class="mt-4 px-4 pb-4">
+                        <div class="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
+                            <img src="assets/dashboard-preview.svg" alt="Dashboard de evolução" class="w-full h-auto group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card-hover bg-white rounded-2xl p-8 lg:p-10 shadow-sm border border-gray-100/60 group reveal">
+                    <div class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Simulados Inteligentes</h3>
+                    <p class="text-gray-500 leading-relaxed">Simulados com análise automatizada de desempenho, identificando padrões de erro e áreas de melhoria.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="card-hover bg-white rounded-2xl p-8 lg:p-10 shadow-sm border border-gray-100/60 group reveal reveal-delay-1">
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Assistente IA</h3>
+                    <p class="text-gray-500 leading-relaxed">Chat inteligente para suporte aos estudos. Tire dúvidas, peça explicações e receba orientações personalizadas.</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="card-hover bg-white rounded-2xl p-8 lg:p-10 shadow-sm border border-gray-100/60 group reveal reveal-delay-2">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Análise de Competências</h3>
+                    <p class="text-gray-500 leading-relaxed">Mapeamento completo das competências do ENEM, mostrando quais habilidades você domina e quais precisam de reforço.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section id="como-funciona" class="py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+                <span class="text-sm font-semibold text-brand-600 uppercase tracking-widest reveal">Como Funciona</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mt-4 mb-6 reveal reveal-delay-1">
+                    Em 3 passos para o<br>
+                    <span class="gradient-text">seu roadmap ideal</span>
+                </h2>
+                <p class="text-lg text-gray-500 leading-relaxed reveal reveal-delay-2">
+                    Simples, rápido e totalmente personalizado pela inteligência artificial.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 lg:gap-12 mb-16">
+                <!-- Step 1 -->
+                <div class="text-center lg:text-left reveal">
+                    <div class="flex flex-col items-center lg:items-start">
+                        <div class="w-16 h-16 rounded-2xl bg-brand-50 flex items-center justify-center mb-6">
+                            <span class="text-2xl font-bold text-brand-600">1</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Faça seu diagnóstico</h3>
+                        <p class="text-gray-500 leading-relaxed">Responda a uma avaliação inteligente que mapeia seu nível atual, objetivos e rotina de estudos.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center lg:text-left reveal reveal-delay-1">
+                    <div class="flex flex-col items-center lg:items-start">
+                        <div class="w-16 h-16 rounded-2xl bg-purple-50 flex items-center justify-center mb-6">
+                            <span class="text-2xl font-bold text-purple-600">2</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Receba seu roadmap</h3>
+                        <p class="text-gray-500 leading-relaxed">Nossa IA processa seus dados e gera um plano de estudos personalizado com prioridades claras.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center lg:text-left reveal reveal-delay-2">
+                    <div class="flex flex-col items-center lg:items-start">
+                        <div class="w-16 h-16 rounded-2xl bg-pink-50 flex items-center justify-center mb-6">
+                            <span class="text-2xl font-bold text-pink-600">3</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Evolua com clareza</h3>
+                        <p class="text-gray-500 leading-relaxed">Acompanhe seu progresso, ajuste rota quando necessário e veja sua evolução em tempo real.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learning Path Flow -->
+            <div class="flex justify-center reveal">
+                <div class="w-full max-w-5xl rounded-2xl bg-white shadow-md border border-gray-100/80 p-6 lg:p-8 img-reveal">
+                    <img src="assets/learning-path.svg" alt="Fluxo: Diagnóstico → Roadmap → Evolução → Aprovação" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section id="depoimentos" class="py-24 lg:py-32 bg-gray-50/40">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+                <span class="text-sm font-semibold text-brand-600 uppercase tracking-widest reveal">Depoimentos</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mt-4 mb-6 reveal reveal-delay-1">
+                    Quem usa a Clareia.ai<br>
+                    <span class="gradient-text">recomenda</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-2xl p-6 lg:p-8 border border-gray-100/80 shadow-sm hover:shadow-lg transition-all duration-300 reveal">
+                    <div class="flex items-center gap-4 mb-5">
+                        <img src="assets/testimonial-avatar1.svg" alt="Ana Beatriz" class="w-12 h-12">
+                        <div>
+                            <div class="font-semibold text-gray-900">Ana Beatriz</div>
+                            <div class="text-sm text-gray-400">Aprovada em Medicina · 840 pts</div>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-gray-500 leading-relaxed text-sm">"A Clareia.ai mudou completamente minha forma de estudar. Consegui identificar meus pontos fracos e focar exatamente no que precisava. O resultado foi minha aprovação em Medicina!"</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-2xl p-6 lg:p-8 border border-gray-100/80 shadow-sm hover:shadow-lg transition-all duration-300 reveal reveal-delay-1">
+                    <div class="flex items-center gap-4 mb-5">
+                        <img src="assets/testimonial-avatar2.svg" alt="Carlos Eduardo" class="w-12 h-12">
+                        <div>
+                            <div class="font-semibold text-gray-900">Carlos Eduardo</div>
+                            <div class="text-sm text-gray-400">Aprovado em Engenharia · 780 pts</div>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-gray-500 leading-relaxed text-sm">"O roadmap personalizado fez toda a diferença. Em vez de estudar tudo aleatoriamente, eu sabia exatamente o que priorizar. Em 3 meses, minha nota subiu de 580 para 780."</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-2xl p-6 lg:p-8 border border-gray-100/80 shadow-sm hover:shadow-lg transition-all duration-300 reveal reveal-delay-2">
+                    <div class="flex items-center gap-4 mb-5">
+                        <img src="assets/testimonial-avatar3.svg" alt="Marina Santos" class="w-12 h-12">
+                        <div>
+                            <div class="font-semibold text-gray-900">Marina Santos</div>
+                            <div class="text-sm text-gray-400">Aprovada em Direito · 810 pts</div>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-gray-500 leading-relaxed text-sm">"O que mais me impressionou foi o dashboard de evolução. Ver meu progresso em tempo real me motivou como nunca. A Clareia.ai não é só um app de estudo, é um parceiro de jornada."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DIFFERENTIALS ===== -->
+    <section id="diferenciais" class="py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+                <span class="text-sm font-semibold text-brand-600 uppercase tracking-widest reveal">Diferenciais</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mt-4 mb-6 reveal reveal-delay-1">
+                    Por que a Clareia.ai é<br>
+                    <span class="gradient-text">diferente</span>
+                </h2>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-6 lg:gap-8">
+                <div class="reveal flex items-start gap-5 p-6 lg:p-8 bg-white rounded-2xl border border-gray-100/80 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">IA exclusiva para o ENEM</h3>
+                        <p class="text-gray-500 leading-relaxed">Inteligência artificial treinada especificamente para o exame, entendendo as competências, pesos e padrões da prova.</p>
+                    </div>
+                </div>
+
+                <div class="reveal reveal-delay-1 flex items-start gap-5 p-6 lg:p-8 bg-white rounded-2xl border border-gray-100/80 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Aprendizado Adaptativo</h3>
+                        <p class="text-gray-500 leading-relaxed">O sistema ajusta recomendações em tempo real conforme você evolui, garantindo que seu plano esteja sempre otimizado.</p>
+                    </div>
+                </div>
+
+                <div class="reveal flex items-start gap-5 p-6 lg:p-8 bg-white rounded-2xl border border-gray-100/80 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-pink-50 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Foco no que realmente importa</h3>
+                        <p class="text-gray-500 leading-relaxed">Priorizamos conteúdos com maior impacto na sua nota, otimizando seu tempo de estudo com base em dados reais.</p>
+                    </div>
+                </div>
+
+                <div class="reveal reveal-delay-1 flex items-start gap-5 p-6 lg:p-8 bg-white rounded-2xl border border-gray-100/80 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Clareza total no processo</h3>
+                        <p class="text-gray-500 leading-relaxed">Transformamos a preparação em algo objetivo, visual, estratégico e mensurável. Você sempre sabe onde está e para onde ir.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission / Vision / Values -->
+            <div class="grid sm:grid-cols-3 gap-6 mt-12 reveal">
+                <div class="p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-brand-50 to-brand-100/30 border border-brand-200/40 hover:shadow-lg transition-all duration-300">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">🎯 Missão</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Tornar a preparação para o ENEM mais clara, estratégica e acessível através da inteligência artificial.</p>
+                </div>
+                <div class="p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100/30 border border-purple-200/40 hover:shadow-lg transition-all duration-300">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">🔭 Visão</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Ser referência em educação personalizada baseada em IA no Brasil.</p>
+                </div>
+                <div class="p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-pink-50 to-pink-100/30 border border-pink-200/40 hover:shadow-lg transition-all duration-300">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">💎 Valores</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Clareza • Acessibilidade • Inovação • Personalização • Evolução contínua • Educação orientada por dados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section id="cta" class="py-24 lg:py-32 bg-gray-50/40">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="relative overflow-hidden rounded-3xl cta-grad p-8 lg:p-16 xl:p-20 reveal">
+                <!-- Background decor -->
+                <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                    <div class="absolute -top-20 -right-20 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
+                    <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
+                    <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(circle, white 1px, transparent 1px); background-size: 24px 24px;"></div>
+                </div>
+
+                <div class="relative flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+                    <div class="flex-1 text-center lg:text-left">
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+                            Pronto para clarear<br>
+                            <span class="text-white/80">seus estudos?</span>
+                        </h2>
+                        <p class="text-lg text-white/70 leading-relaxed mb-10 max-w-xl">
+                            Junte-se a mais de 2.000 estudantes que já transformaram sua preparação para o ENEM com a inteligência artificial da Clareia.ai.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#" class="inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-brand-600 bg-white rounded-xl hover:bg-gray-50 hover:shadow-xl transition-all duration-300 group">
+                                Começar grátis
+                                <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                            </a>
+                            <a href="#" class="inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-white bg-white/10 rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
+                                Falar com equipe
+                            </a>
+                        </div>
+                        <p class="text-sm text-white/50 mt-6">Sem compromisso. Comece agora e descubra seu potencial.</p>
+                    </div>
+                    <!-- CTA visual -->
+                    <div class="flex-shrink-0">
+                        <div class="w-48 h-48 lg:w-56 lg:h-56 rounded-full bg-white/10 flex items-center justify-center animate-float">
+                            <svg class="w-28 h-28 lg:w-32 lg:h-32 text-white/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+                                <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+                                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+                                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="border-t border-gray-100 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-16">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+                <div class="lg:col-span-2">
+                    <a href="#" class="flex items-center gap-3 mb-4">
+                        <img src="assets/logo-small.png" alt="Clareia.ai" class="w-8 h-8 rounded-lg">
+                        <span class="text-lg font-bold text-gray-900">Clareia<span class="text-brand-500">.ai</span></span>
+                    </a>
+                    <p class="text-sm text-gray-400 max-w-sm leading-relaxed">
+                        Inteligência artificial que clareia seu caminho para o ENEM. Transforme dados de desempenho em um roadmap de estudos personalizado.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-900 mb-4 uppercase tracking-wider">Produto</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#funcionalidades" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Funcionalidades</a></li>
+                        <li><a href="#como-funciona" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Como Funciona</a></li>
+                        <li><a href="#diferenciais" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Diferenciais</a></li>
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Preços</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-900 mb-4 uppercase tracking-wider">Empresa</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Sobre</a></li>
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Contato</a></li>
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="divider-gradient mb-8"></div>
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-sm text-gray-400">&copy; 2026 Clareia.ai. Todos os direitos reservados.</p>
+                <div class="flex items-center gap-4">
+                    <a href="#" class="text-gray-300 hover:text-gray-600 transition-colors" aria-label="Instagram">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-gray-600 transition-colors" aria-label="LinkedIn">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-gray-600 transition-colors" aria-label="Twitter/X">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Reveal Script -->
+    <script>
+        // Intersection Observer for scroll animations
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Navbar blur enhancement on scroll
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 20) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.92)';
+                navbar.style.borderBottom = '1px solid rgba(0,0,0,0.04)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.75)';
+                navbar.style.borderBottom = '1px solid rgba(0,0,0,0)';
+            }
+            lastScroll = currentScroll;
+        });
+
+        // Smooth anchor scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        console.log('🚀 Clareia.ai - Landing page carregada com sucesso!');
+    </script>
 </body>
 </html>

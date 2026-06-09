@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="200" viewBox="0 0 600 200">
+      <defs>
+        <linearGradient id="testGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#0c8ee5"/>
+          <stop offset="100%" stop-color="#7c3aed"/>
+        </linearGradient>
+      </defs>
+      <rect x="10" y="10" width="250" height="160" rx="16" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+      <text x="30" y="45" font-family="Inter" font-size="14" fill="#f59e0b">*****</text>
+      <text x="30" y="75" font-family="Inter" font-size="11" fill="#374151" font-weight="600">"Mudou minha forma de estudar!"</text>
+      <text x="30" y="95" font-family="Inter" font-size="10" fill="#6b7280">Finalmente um plano que se adapta</text>
+      <text x="30" y="110" font-family="Inter" font-size="10" fill="#6b7280">ao meu ritmo. Minha nota subiu</text>
+      <text x="30" y="125" font-family="Inter" font-size="10" fill="#6b7280">de 580 para 720 em 3 meses.</text>
+      <circle cx="45" cy="147" r="14" fill="url(#testGrad)" opacity="0.1"/>
+      <text x="45" y="151" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#0c8ee5">AM</text>
+      <text x="68" y="150" font-family="Inter" font-size="10" font-weight="600" fill="#374151">Ana M.</text>
+      <text x="68" y="162" font-family="Inter" font-size="8" fill="#9ca3af">Estudante</text>
+      <rect x="280" y="10" width="250" height="160" rx="16" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+      <text x="300" y="45" font-family="Inter" font-size="14" fill="#f59e0b">*****</text>
+      <text x="300" y="75" font-family="Inter" font-size="11" fill="#374151" font-weight="600">"Recomendo para todos!"</text>
+      <text x="300" y="95" font-family="Inter" font-size="10" fill="#6b7280">O roadmap e muito preciso.</text>
+      <text x="300" y="110" font-family="Inter" font-size="10" fill="#6b7280">Saber exatamente onde focar</text>
+      <text x="300" y="125" font-family="Inter" font-size="10" fill="#6b7280">fez toda diferenca.</text>
+      <circle cx="315" cy="147" r="14" fill="url(#testGrad)" opacity="0.1"/>
+      <text x="315" y="151" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#7c3aed">PL</text>
+      <text x="338" y="150" font-family="Inter" font-size="10" font-weight="600" fill="#374151">Pedro L.</text>
+      <text x="338" y="162" font-family="Inter" font-size="8" fill="#9ca3af">Estudante</text>
+    </svg>

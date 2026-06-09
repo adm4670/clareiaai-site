@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="450" viewBox="0 0 500 450">
+      <defs>
+        <linearGradient id="fg1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#0c8ee5"/><stop offset="100%" stop-color="#3b82f6"/>
+        </linearGradient>
+        <linearGradient id="fg2" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a855f7"/>
+        </linearGradient>
+        <linearGradient id="fg3" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#0c8ee5"/>
+        </linearGradient>
+        <filter id="cardShadow"><feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0c8ee5" flood-opacity="0.06"/></filter>
+      </defs>
+      <rect x="0" y="0" width="500" height="450" rx="30" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1"/>
+      <text x="250" y="45" text-anchor="middle" font-family="Inter" font-size="16" font-weight="700" fill="#111827">Seu Painel de Estudos</text>
+      <text x="250" y="65" text-anchor="middle" font-family="Inter" font-size="11" fill="#6b7280">Visao geral do seu progresso</text>
+      <rect x="25" y="85" width="135" height="70" rx="12" fill="white" stroke="#e5e7eb" stroke-width="1" filter="url(#cardShadow)"/>
+      <text x="40" y="112" font-family="Inter" font-size="10" fill="#6b7280">Horas de estudo</text>
+      <text x="40" y="138" font-family="Inter" font-size="20" font-weight="700" fill="#0c8ee5">42h</text>
+      <text x="110" y="138" font-family="Inter" font-size="9" fill="#10b981">+12%</text>
+      <rect x="180" y="85" width="135" height="70" rx="12" fill="white" stroke="#e5e7eb" stroke-width="1" filter="url(#cardShadow)"/>
+      <text x="195" y="112" font-family="Inter" font-size="10" fill="#6b7280">Questoes</text>
+      <text x="195" y="138" font-family="Inter" font-size="20" font-weight="700" fill="#7c3aed">1.247</text>
+      <text x="265" y="138" font-family="Inter" font-size="9" fill="#10b981">+8%</text>
+      <rect x="335" y="85" width="135" height="70" rx="12" fill="white" stroke="#e5e7eb" stroke-width="1" filter="url(#cardShadow)"/>
+      <text x="350" y="112" font-family="Inter" font-size="10" fill="#6b7280">Evolucao</text>
+      <text x="350" y="138" font-family="Inter" font-size="20" font-weight="700" fill="#f59e0b">+185</text>
+      <rect x="25" y="175" width="290" height="180" rx="14" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+      <text x="40" y="200" font-family="Inter" font-size="11" fill="#374151" font-weight="600">Evolucao por materia</text>
+      <rect x="50" y="320" width="22" height="25" rx="3" fill="url(#fg1)" opacity="0.3"/>
+      <rect x="50" y="300" width="22" height="45" rx="3" fill="url(#fg1)" opacity="0.5"/>
+      <rect x="50" y="285" width="22" height="60" rx="3" fill="url(#fg1)" opacity="0.7"/>
+      <rect x="85" y="310" width="22" height="35" rx="3" fill="url(#fg2)" opacity="0.3"/>
+      <rect x="85" y="295" width="22" height="50" rx="3" fill="url(#fg2)" opacity="0.5"/>
+      <rect x="85" y="280" width="22" height="65" rx="3" fill="url(#fg2)" opacity="0.7"/>
+      <rect x="120" y="315" width="22" height="30" rx="3" fill="url(#fg3)" opacity="0.3"/>
+      <rect x="120" y="300" width="22" height="45" rx="3" fill="url(#fg3)" opacity="0.5"/>
+      <rect x="120" y="288" width="22" height="57" rx="3" fill="url(#fg3)" opacity="0.7"/>
+      <rect x="155" y="305" width="22" height="40" rx="3" fill="url(#fg1)" opacity="0.3"/>
+      <rect x="155" y="290" width="22" height="55" rx="3" fill="url(#fg1)" opacity="0.5"/>
+      <rect x="155" y="275" width="22" height="70" rx="3" fill="url(#fg1)" opacity="0.7"/>
+      <rect x="190" y="310" width="22" height="35" rx="3" fill="url(#fg2)" opacity="0.3"/>
+      <rect x="190" y="295" width="22" height="50" rx="3" fill="url(#fg2)" opacity="0.5"/>
+      <rect x="190" y="282" width="22" height="63" rx="3" fill="url(#fg2)" opacity="0.7"/>
+      <rect x="225" y="318" width="22" height="27" rx="3" fill="url(#fg3)" opacity="0.3"/>
+      <rect x="225" y="305" width="22" height="40" rx="3" fill="url(#fg3)" opacity="0.5"/>
+      <rect x="225" y="295" width="22" height="50" rx="3" fill="url(#fg3)" opacity="0.7"/>
+      <rect x="260" y="312" width="22" height="33" rx="3" fill="url(#fg1)" opacity="0.3"/>
+      <rect x="260" y="298" width="22" height="47" rx="3" fill="url(#fg1)" opacity="0.5"/>
+      <rect x="260" y="285" width="22" height="60" rx="3" fill="url(#fg1)" opacity="0.7"/>
+      <text x="61" y="342" font-family="Inter" font-size="7" fill="#9ca3af" text-anchor="middle">M</text>
+      <text x="96" y="342" font-family="Inter" font-size="7" fill="#9ca3af" text-anchor="middle">N</text>
+      <text x="131" y="342" font-family="Inter" font-size="7" fill="#9ca3af" text-anchor="middle">L</text>
+      <text x="166" y="342" font-family="Inter" font-size="7" fill="#9ca3af" text-anchor="middle">H</text>
+      <text x="201" y="342" font-family="Inter" font-size="7" fill="#9ca3af" text-anchor="middle">R</text>
+      <text x="236" y="342" font-family="Inter" font-size="7" fill="#9ca3af" text-anchor="middle">I</text>
+      <text x="271" y="342" font-family="Inter" font-size="7" fill="#9ca3af" text-anchor="middle">E</text>
+      <rect x="335" y="175" width="140" height="180" rx="14" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+      <text x="350" y="200" font-family="Inter" font-size="11" fill="#374151" font-weight="600">Roadmap</text>
+      <rect x="350" y="215" width="110" height="4" rx="2" fill="#f3f4f6"/>
+      <rect x="350" y="215" width="80" height="4" rx="2" fill="url(#fg1)" opacity="0.5"/>
+      <text x="350" y="232" font-family="Inter" font-size="10" fill="#374151" font-weight="500">Matematica</text>
+      <text x="430" y="232" font-family="Inter" font-size="9" fill="#0c8ee5" text-anchor="end">72%</text>
+      <rect x="350" y="243" width="110" height="4" rx="2" fill="#f3f4f6"/>
+      <rect x="350" y="243" width="55" height="4" rx="2" fill="url(#fg2)" opacity="0.5"/>
+      <text x="350" y="260" font-family="Inter" font-size="10" fill="#374151" font-weight="500">Natureza</text>
+      <text x="430" y="260" font-family="Inter" font-size="9" fill="#7c3aed" text-anchor="end">48%</text>
+      <rect x="350" y="271" width="110" height="4" rx="2" fill="#f3f4f6"/>
+      <rect x="350" y="271" width="90" height="4" rx="2" fill="url(#fg3)" opacity="0.5"/>
+      <text x="350" y="288" font-family="Inter" font-size="10" fill="#374151" font-weight="500">Linguagens</text>
+      <text x="430" y="288" font-family="Inter" font-size="9" fill="#06b6d4" text-anchor="end">85%</text>
+      <rect x="350" y="299" width="110" height="4" rx="2" fill="#f3f4f6"/>
+      <rect x="350" y="299" width="65" height="4" rx="2" fill="url(#fg1)" opacity="0.5"/>
+      <text x="350" y="316" font-family="Inter" font-size="10" fill="#374151" font-weight="500">Humanas</text>
+      <text x="430" y="316" font-family="Inter" font-size="9" fill="#0c8ee5" text-anchor="end">58%</text>
+      <rect x="350" y="327" width="110" height="4" rx="2" fill="#f3f4f6"/>
+      <rect x="350" y="327" width="35" height="4" rx="2" fill="url(#fg2)" opacity="0.5"/>
+      <text x="350" y="344" font-family="Inter" font-size="10" fill="#374151" font-weight="500">Redacao</text>
+      <text x="430" y="344" font-family="Inter" font-size="9" fill="#7c3aed" text-anchor="end">32%</text>
+      <rect x="25" y="375" width="450" height="50" rx="12" fill="url(#fg1)" opacity="0.05" stroke="url(#fg1)" stroke-width="1" stroke-opacity="0.15"/>
+      <text x="45" y="398" font-family="Inter" font-size="12" fill="#0c8ee5" font-weight="600">Proximo: Revisar Funcoes Organicas</text>
+      <text x="45" y="415" font-family="Inter" font-size="10" fill="#6b7280">Foco em Quimica - 20 questoes recomendadas</text>
+      <rect x="380" y="390" width="80" height="24" rx="6" fill="url(#fg1)" opacity="0.1"/>
+      <text x="420" y="406" text-anchor="middle" font-family="Inter" font-size="10" fill="#0c8ee5" font-weight="600">Comecar</text>
+    </svg>

@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" fill="none">
+  <defs>
+    <linearGradient id="pg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#f87171"/>
+    </linearGradient>
+    <linearGradient id="pg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <linearGradient id="pg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c8ee5"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <filter id="ps1">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.04"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="600" height="420" rx="24" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Label -->
+  <rect x="240" y="16" width="120" height="24" rx="12" fill="#f3f4f6"/>
+  <text x="300" y="33" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="10" fill="#6b7280">Antes × Depois</text>
+
+  <!-- Problem side (left panel) -->
+  <g transform="translate(24, 56)">
+    <rect x="0" y="0" width="260" height="340" rx="16" fill="white" filter="url(#ps1)" stroke="#fecaca" stroke-width="1.5"/>
+    
+    <!-- Red top bar -->
+    <rect x="0" y="0" width="260" height="44" rx="16" fill="#fef2f2"/>
+    <rect x="0" y="28" width="260" height="16" fill="#fef2f2"/>
+    <circle cx="28" cy="22" r="10" fill="#fee2e2"/>
+    <text x="28" y="26" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#ef4444">!</text>
+    <text x="50" y="26" font-family="Inter" font-weight="700" font-size="13" fill="#dc2626">Antes da Clareia.ai</text>
+
+    <!-- Confused student icon -->
+    <circle cx="130" cy="90" r="28" fill="#fef2f2"/>
+    <circle cx="130" cy="85" r="12" fill="#fca5a5" opacity="0.3"/>
+    <circle cx="124" cy="83" r="2.5" fill="#dc2626" opacity="0.7"/>
+    <circle cx="136" cy="83" r="2.5" fill="#dc2626" opacity="0.7"/>
+    <path d="M122 95 Q130 90 138 95" stroke="#dc2626" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.4"/>
+
+    <!-- Scattered papers -->
+    <rect x="65" y="135" width="50" height="36" rx="4" fill="#fef2f2" stroke="#fca5a5" stroke-width="1" transform="rotate(-12, 90, 153)"/>
+    <rect x="140" y="140" width="50" height="34" rx="4" fill="#fef2f2" stroke="#fca5a5" stroke-width="1" transform="rotate(8, 165, 157)"/>
+    <rect x="100" y="162" width="45" height="30" rx="4" fill="#fef2f2" stroke="#fca5a5" stroke-width="1" transform="rotate(-5, 122, 177)"/>
+
+    <!-- Question marks -->
+    <text x="70" y="220" font-family="Inter" font-weight="800" font-size="28" fill="#fca5a5" opacity="0.5">?</text>
+    <text x="125" y="245" font-family="Inter" font-weight="800" font-size="36" fill="#f87171" opacity="0.4">?</text>
+    <text x="170" y="220" font-family="Inter" font-weight="800" font-size="24" fill="#fca5a5" opacity="0.5">?</text>
+
+    <!-- Metrics - bad -->
+    <rect x="30" y="265" width="200" height="44" rx="10" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+    <text x="50" y="285" font-family="Inter" font-size="10" fill="#6b7280">Nota atual</text>
+    <text x="50" y="300" font-family="Inter" font-weight="700" font-size="16" fill="#ef4444">520 pts</text>
+    <path d="M175 278 L185 270 L195 278" stroke="#ef4444" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- VS divider -->
+  <g transform="translate(284, 190)">
+    <circle cx="16" cy="20" r="20" fill="white" stroke="#e2e8f0" stroke-width="1.5" filter="url(#ps1)"/>
+    <text x="16" y="26" text-anchor="middle" font-family="Inter" font-weight="700" font-size="13" fill="#0c8ee5">VS</text>
+  </g>
+
+  <!-- Solution side (right panel) -->
+  <g transform="translate(316, 56)">
+    <rect x="0" y="0" width="260" height="340" rx="16" fill="white" filter="url(#ps1)" stroke="#bbf7d0" stroke-width="1.5"/>
+    
+    <!-- Green top bar -->
+    <rect x="0" y="0" width="260" height="44" rx="16" fill="#f0fdf4"/>
+    <rect x="0" y="28" width="260" height="16" fill="#f0fdf4"/>
+    <circle cx="28" cy="22" r="10" fill="#dcfce7"/>
+    <text x="28" y="26" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#10b981">✓</text>
+    <text x="50" y="26" font-family="Inter" font-weight="700" font-size="13" fill="#16a34a">Depois da Clareia.ai</text>
+
+    <!-- Happy student -->
+    <circle cx="130" cy="90" r="28" fill="#f0fdf4"/>
+    <circle cx="130" cy="85" r="12" fill="#86efac" opacity="0.3"/>
+    <circle cx="124" cy="83" r="2.5" fill="#16a34a" opacity="0.7"/>
+    <circle cx="136" cy="83" r="2.5" fill="#16a34a" opacity="0.7"/>
+    <path d="M122 97 Q130 103 138 97" stroke="#16a34a" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
+
+    <!-- Organized roadmap -->
+    <rect x="75" y="135" width="110" height="48" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
+    <rect x="85" y="145" width="30" height="5" rx="2.5" fill="#16a34a" opacity="0.4"/>
+    <rect x="85" y="156" width="55" height="5" rx="2.5" fill="#16a34a" opacity="0.3"/>
+    <rect x="85" y="167" width="40" height="5" rx="2.5" fill="#16a34a" opacity="0.25"/>
+
+    <!-- Checkmark big -->
+    <circle cx="130" cy="215" r="24" fill="#dcfce7" opacity="0.6"/>
+    <path d="M118 215 L126 223 L142 207" stroke="#10b981" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Growth chart -->
+    <path d="M50 310 L75 290 L100 295 L130 270 L160 255 L185 235 L210 220" stroke="url(#pg3)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="50" cy="310" r="4" fill="#0c8ee5" opacity="0.5"/>
+    <circle cx="100" cy="295" r="4" fill="#0c8ee5" opacity="0.5"/>
+    <circle cx="160" cy="255" r="4" fill="#7c3aed" opacity="0.5"/>
+    <circle cx="210" cy="220" r="6" fill="url(#pg3)" stroke="white" stroke-width="2">
+      <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Metrics - good -->
+    <rect x="30" y="265" width="200" height="44" rx="10" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+    <text x="50" y="285" font-family="Inter" font-size="10" fill="#6b7280">Nota atual</text>
+    <text x="50" y="300" font-family="Inter" font-weight="700" font-size="16" fill="#16a34a">780 pts</text>
+    <path d="M175 278 L185 270 L195 278" stroke="#16a34a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
